@@ -71,7 +71,10 @@ public class Lesson2 {
         List<String> list = Arrays.asList(
                 "The", "Quick", "BROWN", "Fox", "Jumped", "Over", "The", "LAZY", "DOG");
 
-    /* YOUR CODE HERE */
+
+        List<String> list3 = list.parallelStream().filter(s -> s.length() % 2 != 0).map(String::toLowerCase).collect(Collectors.toList());
+        System.out.println(list3);
+
     }
 
     /**
@@ -84,7 +87,13 @@ public class Lesson2 {
         List<String> list = Arrays.asList(
                 "The", "quick", "brown", "fox", "jumped", "over", "the", "lazy", "dog");
 
-    /* YOUR CODE HERE */
+        String sb = list.stream()
+                .skip(1)
+                .limit(3)
+                .collect(Collectors.joining("-"));
+
+        System.out.println(sb);
+
     }
 
     /**
